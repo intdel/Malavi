@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="205.0" prefWidth="230.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewMailClientDialog">
+   <children>
+      <Label layoutX="26.0" layoutY="24.0" text="Name" />
+      <Label layoutX="26.0" layoutY="68.0" text="URL" />
+      <Button layoutX="36.0" layoutY="158.0" mnemonicParsing="false" onAction="#addNewClient" text="Add" />
+      <TextField fx:id="name" layoutX="67.0" layoutY="20.0" promptText="Example" />
+      <TextField fx:id="URL" layoutX="67.0" layoutY="64.0" promptText="https://mail.example.com" />
+      <Text layoutX="32.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please make sure you use https" />
+      <Button layoutX="143.0" layoutY="158.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <CheckBox fx:id="temporaryCheckBox" layoutX="37.0" layoutY="114.0" mnemonicParsing="false" text="Add only for this session?" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: license.jar jxbrowser-6.0.jar jxbrowser-mac-6.0.jar jxbrow
+ ser-win-6.0.jar jxbrowser-linux32-6.0.jar jxbrowser-linux64-6.0.jar
+Main-Class: view.Malavi
+

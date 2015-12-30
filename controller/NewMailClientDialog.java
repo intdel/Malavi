@@ -20,8 +20,7 @@ public class NewMailClientDialog {
     private TextField name;
     @FXML
     private TextField URL;
-    @FXML
-    private CheckBox temporaryCheckBox;
+
 
     public void setMainView(MainView mainView) {
         this.mainView = mainView;
@@ -32,18 +31,15 @@ public class NewMailClientDialog {
     }
 
     @FXML
-    private void initialize()
-    {
+    private void initialize() {
 
     }
 
     @FXML
-    private int addNewClient()
-    {
+    private int addNewClient() {
 
-        if (name.getLength() == 0 || URL.getLength() == 0 || (URL.getText().contains("http") == false))
-        {
-            Alert alert = new Alert (Alert.AlertType.ERROR);
+        if (name.getLength() == 0 || URL.getLength() == 0 || (URL.getText().contains("http") == false)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Please double check your entries.");
             alert.setHeaderText("Error while adding new mail client!");
@@ -51,26 +47,18 @@ public class NewMailClientDialog {
             return -1;
         }
 
+        settings.addNewConifg(name.getText(), URL.getText());
 
-        if (temporaryCheckBox.isSelected())
-        {
-            settings.addNewConifg(name.getText(), URL.getText(), true);
-        }
-        else
-        {
-            settings.addNewConifg(name.getText(), URL.getText(), false);
-        }
 
         mainView.addClient(name.getText(), URL.getText());
 
         myStage.close();
-        return  0;
+        return 0;
 
     }
 
     @FXML
-    private void cancel()
-    {
+    private void cancel() {
         myStage.close();
     }
 }

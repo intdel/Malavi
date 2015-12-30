@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="374.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.IntroDialog">
+   <children>
+      <Text layoutX="182.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Malavi!">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="logo" fitHeight="64.0" fitWidth="68.0" layoutX="266.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="279.0" layoutY="324.0" mnemonicParsing="false" onAction="#nextButton" text="Next" />
+      <Text layoutX="48.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo orci, vehicula at commodo in, ultricies ut nibh. Quisque erat massa, fringilla in finibus eget, cursus id ipsum. Ut et feugiat leo, non elementum neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." wrappingWidth="502.736328125" />
+      <CheckBox fx:id="gMailCheckBox" layoutX="264.0" layoutY="248.0" mnemonicParsing="false" text="Google Mail (GMail)" />
+      <CheckBox fx:id="gCalendarCheckBox" layoutX="264.0" layoutY="265.0" mnemonicParsing="false" text="Google Calendar" />
+      <CheckBox fx:id="yahooMailCheckBox" layoutX="264.0" layoutY="282.0" mnemonicParsing="false" text="Yahoo Mail" />
+   </children>
+</AnchorPane>

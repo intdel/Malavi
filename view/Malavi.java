@@ -25,15 +25,15 @@ public class Malavi extends Application {
     public void start(Stage primaryStage) throws Exception {
         this.stage = primaryStage;
 
-        FXMLLoader loader = new FXMLLoader(Malavi.class.getResource("../controller/MainView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/controller/MainView.fxml"));
         AnchorPane mainPane = (AnchorPane) loader.load();
         Scene mainScene = new Scene(mainPane);
         MainView mainView = (MainView)loader.getController();
         mainView.setStage(stage);
 
         stage.setScene(mainScene);
-        stage.setTitle("Malavi");
-        stage.getIcons().add(new Image(Malavi.class.getResource("../res/logo.png").toString()));
+        stage.setTitle("Malavi - ALPHA");
+        stage.getIcons().add(new Image(getClass().getResource("/res/logo.png").toString()));
         stage.show();
     }
 

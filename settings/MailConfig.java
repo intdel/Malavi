@@ -7,12 +7,10 @@ public class MailConfig {
 
     private String name;
     private String URL;
-    boolean temporary;
 
-    public MailConfig(String name, String URL, boolean temporary) {
+    public MailConfig(String name, String URL) {
         this.name = name;
         this.URL = URL;
-        this.temporary = temporary;
     }
 
     public String getName() {
@@ -23,9 +21,6 @@ public class MailConfig {
         return URL;
     }
 
-    public boolean isTemporary() {
-        return temporary;
-    }
 
     public void setName(String name) {
         this.name = name;
@@ -35,7 +30,4 @@ public class MailConfig {
         this.URL = URL;
     }
 
-    public void setTemporary(boolean temporary) {
-        this.temporary = temporary;
-    }
 }

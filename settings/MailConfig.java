@@ -17,13 +17,12 @@ public class MailConfig {
         return name;
     }
 
-    public String getURL() {
-        return URL;
-    }
-
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getURL() {
+        return URL;
     }
 
     public void setURL(String URL) {

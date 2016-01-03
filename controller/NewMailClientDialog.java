@@ -2,7 +2,6 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import settings.Settings;
@@ -22,10 +21,18 @@ public class NewMailClientDialog {
     private TextField URL;
 
 
+    /**
+     * Necessary, so that we can add a new client/tab
+     * @param mainView
+     */
     public void setMainView(MainView mainView) {
         this.mainView = mainView;
     }
 
+    /**
+     * Necessary, so that we can close the stage if we choose to cancel.
+     * @param myStage
+     */
     public void setMyStage(Stage myStage) {
         this.myStage = myStage;
     }
@@ -48,7 +55,6 @@ public class NewMailClientDialog {
         }
 
         settings.addNewConifg(name.getText(), URL.getText());
-
 
         mainView.addClient(name.getText(), URL.getText());
 

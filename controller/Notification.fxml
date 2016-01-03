@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="84.0" prefWidth="272.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Notification">
+   <children>
+      <ImageView fx:id="logo" fitHeight="60.0" fitWidth="74.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="110.0" layoutY="6.0" text="Malavi Notification">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Text fx:id="text" layoutX="110.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DUMMY NOTIFICATION 123 456" wrappingWidth="156.0" />
+   </children>
+</AnchorPane>

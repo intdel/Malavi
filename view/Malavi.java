@@ -32,7 +32,7 @@ public class Malavi extends Application {
         mainView.setStage(stage);
 
         stage.setScene(mainScene);
-        stage.setTitle("Malavi - ALPHA");
+        stage.setTitle("Malavi - V1.0");
         stage.getIcons().add(new Image(getClass().getResource("/res/logo.png").toString()));
         stage.show();
     }

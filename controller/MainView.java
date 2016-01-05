@@ -3,6 +3,7 @@ package controller;
 import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.BrowserContext;
 import com.teamdev.jxbrowser.chromium.BrowserContextParams;
+import com.teamdev.jxbrowser.chromium.LoggerProvider;
 import com.teamdev.jxbrowser.chromium.javafx.BrowserView;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -23,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Optional;
+import java.util.logging.Level;
 
 /**
  * Created by Chris on 12/28/2015.
@@ -32,6 +34,7 @@ public class MainView {
 
     @FXML
     private TabPane tabPane;
+
 
     private Stage stage;
     private ObservableList<Tab> tabs;
@@ -58,6 +61,7 @@ public class MainView {
             addClient(currentConfig.getName(), currentConfig.getURL());
         }
 
+        LoggerProvider.setLevel(Level.SEVERE);
 
     }
 
@@ -106,7 +110,7 @@ public class MainView {
         BrowserView browserView = new BrowserView(browser);
         browserPane.setCenter(browserView);
         browser.loadURL(URL);
-        browser.addTitleListener(new TitleChanged(newTab, this));
+        browser.addTitleListener(new TitleChanged(name));
     }
 
     /**
@@ -161,7 +165,7 @@ public class MainView {
         Tab selectedTab = findSelectedTab();
         Alert closeAlert = new Alert(Alert.AlertType.CONFIRMATION);
         Optional<ButtonType> closeAlertResult;
-        if (selectedTab!= null) {
+        if (selectedTab != null) {
             closeAlert.setTitle("Close tab");
             closeAlert.setHeaderText("Are you sure you want to close tab \"" + selectedTab.getText() + "\"?");
             closeAlertResult = closeAlert.showAndWait();
@@ -190,7 +194,7 @@ public class MainView {
      */
     @FXML
     private void debugShowIntro() {
-        Notification.showNotification("Test notification for 2 seconds", 2000);
+
     }
 
     /**

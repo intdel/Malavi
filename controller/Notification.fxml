@@ -6,14 +6,15 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="84.0" prefWidth="272.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Notification">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="333.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Notification">
    <children>
-      <ImageView fx:id="logo" fitHeight="60.0" fitWidth="74.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="logo" fitHeight="87.0" fitWidth="96.0" layoutX="-3.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="110.0" layoutY="6.0" text="Malavi Notification">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
       <Text fx:id="text" layoutX="110.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DUMMY NOTIFICATION 123 456" wrappingWidth="156.0" />
+      <ToggleButton fx:id="muteButton" layoutX="126.0" layoutY="57.0" mnemonicParsing="false" onAction="#muteNotification" text="Mute until next start" />
    </children>
 </AnchorPane>

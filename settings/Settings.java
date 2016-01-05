@@ -18,6 +18,8 @@ public class Settings {
     private MainView mainView;
     private String workDir;
     private String browserDir;
+    private int notificationLength = 5000; //TODO make it variable
+    private boolean notificationsMuted = false;
 
     /**
      * Creates the folder directory if it doesn't exist otherwise just loads the settings.
@@ -62,12 +64,28 @@ public class Settings {
 
     }
 
+    public void setNotificationLength(int notificationLength) {
+        this.notificationLength = notificationLength;
+    }
+
+    public void setNotificationsMuted(boolean notificationsMuted) {
+        this.notificationsMuted = notificationsMuted;
+    }
+
     public String getWorkDir() {
         return workDir;
     }
 
     public String getBrowserDir() {
         return browserDir;
+    }
+
+    public int getNotificationLength() {
+        return notificationLength;
+    }
+
+    public boolean isNotificationsMuted() {
+        return notificationsMuted;
     }
 
     /**
@@ -119,6 +137,7 @@ public class Settings {
 
     /**
      * Adds new config to the current settings, but it also saves it to disk right away.
+     *
      * @param name
      * @param URL
      */
@@ -129,6 +148,7 @@ public class Settings {
 
     /**
      * Removes config from settings, but also from the file.
+     *
      * @param id
      */
     public void removeConfig(int id) {

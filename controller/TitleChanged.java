@@ -32,7 +32,7 @@ public class TitleChanged implements TitleListener {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                String message = "You have new messages in " + clientName + "!";
+                String message = "You have one or more new messages in " + clientName + "!";
                 String title = titleEvent.getTitle();
                 String debugtitle = title.replaceAll("\\D+","");
                 int newMessageCount = -1;
@@ -45,7 +45,7 @@ public class TitleChanged implements TitleListener {
                 }
 
                 if (title.contains("(") && title.contains(")") && messageCounter < newMessageCount && !isFirstNotification) {
-                    Notification.showNotification(message + messageCounter, settings.getNotificationLength());
+                    Notification.showNotification(message, settings.getNotificationLength());
                     messageCounter = newMessageCount;
                 }
                 if (title.contains("(") && title.contains(")") && messageCounter < newMessageCount)

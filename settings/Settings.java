@@ -18,22 +18,23 @@ public class Settings {
     private MainView mainView;
     private String workDir;
     private String browserDir;
-    private int notificationLength = 5000; //TODO make it variable
+    private int notificationLength = 5000;
     private boolean notificationsMuted = false;
+    private String separator = File.separator;
 
     /**
      * Creates the folder directory if it doesn't exist otherwise just loads the settings.
      */
     private Settings() {
 
-        workDir = System.getProperty("user.home") + "\\Malavi";
-        browserDir = workDir + "\\BrowserData";
+        workDir = System.getProperty("user.home") + separator + "Malavi";
+        browserDir = workDir + separator + "BrowserData";
         File workDirFile = new File(workDir);
         System.out.println(workDir);
         System.out.println(browserDir);
 
         //It's a new user, so create structure and example data
-        if (!new File(workDir + "\\settings.inf").exists()) {
+        if (!new File(workDir + separator + "settings.inf").exists()) {
             IntroDialog.showIntro();
             workDirFile.mkdir();
             new File(browserDir).mkdir();
@@ -66,10 +67,12 @@ public class Settings {
 
     public void setNotificationLength(int notificationLength) {
         this.notificationLength = notificationLength;
+        saveSettingsToDisk();
     }
 
     public void setNotificationsMuted(boolean notificationsMuted) {
         this.notificationsMuted = notificationsMuted;
+        saveSettingsToDisk();
     }
 
     public String getWorkDir() {
@@ -97,12 +100,15 @@ public class Settings {
         return (ArrayList<MailConfig>) mailConfigs.clone();
     }
 
+    //First X (fixed number) of lines are normal settings, rest is client
     private void loadSettings() {
         try {
-            File settingsFile = new File(workDir + "\\settings.inf");
+            File settingsFile = new File(workDir + separator + "settings.inf");
             BufferedReader settingsReader = new BufferedReader(new FileReader(settingsFile));
             Iterator<MailConfig> mailConfigIterator = mailConfigs.iterator();
             String currentLine;
+
+            notificationLength = Integer.parseInt(settingsReader.readLine().split("=")[1]);
 
             while ((currentLine = settingsReader.readLine()) != null) {
                 mailConfigs.add(new MailConfig(currentLine, settingsReader.readLine()));
@@ -112,14 +118,22 @@ public class Settings {
 
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NumberFormatException e)
+        {
+            e.printStackTrace();
         }
     }
 
+    //First write the "normal settings" and then the "URL data"
     private void saveSettingsToDisk() {
         try {
-            File settingsFile = new File(workDir + "\\settings.inf");
+            File settingsFile = new File(workDir + separator + "settings.inf");
             BufferedWriter settingsWriter = new BufferedWriter(new FileWriter(settingsFile));
             Iterator<MailConfig> mailConfigIterator = mailConfigs.iterator();
+
+            settingsWriter.write("notificationLength=" +  notificationLength + "\n");
+
+
             while (mailConfigIterator.hasNext()) {
                 MailConfig mailConfig = mailConfigIterator.next();
                 settingsWriter.write(mailConfig.getName() + "\n");

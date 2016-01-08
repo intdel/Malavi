@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
@@ -8,28 +9,45 @@
    <children>
       <MenuBar layoutX="102.0" layoutY="66.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
-            <Menu mnemonicParsing="false" text="Tab">
+            <Menu mnemonicParsing="false" text="Add...">
               <items>
-              <MenuItem mnemonicParsing="false" onAction="#openAddNewMailClientDialog" text="Add new tab" />
-                  <MenuItem mnemonicParsing="false" onAction="#refreshTab" text="Refresh selected tab" />
-                  <MenuItem mnemonicParsing="false" onAction="#refreshAllTabs" text="Refresh all tabs" />
-                  <MenuItem mnemonicParsing="false" onAction="#removeTab" text="Remove selected tab" />
+                  <Menu mnemonicParsing="false" text="Example Tab">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#addGMail" text="Google Mail (GMail)" />
+                        <MenuItem mnemonicParsing="false" onAction="#addGoogleCalendar" text="Google Calendar" />
+                        <MenuItem mnemonicParsing="false" onAction="#addYahooMail" text="Yahoo Mail" />
+                    </items>
+                  </Menu>
+              <MenuItem mnemonicParsing="false" onAction="#openAddNewMailClientDialog" text="Custom Tab" />
               </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Settings" />
-                  <MenuItem mnemonicParsing="false" onAction="#resetSettings" text="Reset Settings (!)" />
-            </items>
+            <Menu mnemonicParsing="false" text="Tabs..">
+              <items>
+                  <Menu mnemonicParsing="false" text="All Tabs">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#refreshAllTabs" text="Refresh all tabs" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Selected Tab">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#refreshTab" text="Refresh" />
+                        <MenuItem mnemonicParsing="false" onAction="#removeTab" text="Remove" />
+                    </items>
+                  </Menu>
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Settings">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showSettings" text="Settings" />
+               </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu disable="true" mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-                  <MenuItem mnemonicParsing="false" onAction="#debugShowIntro" text="DEBUG" />
+              <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
-      <TabPane fx:id="tabPane" layoutX="140.0" layoutY="24.0" prefHeight="376.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0" />
+      <TabPane fx:id="tabPane" layoutX="140.0" layoutY="24.0" prefHeight="781.0" prefWidth="1300.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0" />
    </children>
 </AnchorPane>

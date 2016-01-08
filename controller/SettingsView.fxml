@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="366.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingsView">
+   <children>
+      <Text layoutX="21.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notification length">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <ToggleButton fx:id="notificationHiddenButton" layoutX="75.0" layoutY="142.0" mnemonicParsing="false" onAction="#muteNotifications" text="Mute notifications for now" />
+      <Button layoutX="11.0" layoutY="283.0" mnemonicParsing="false" onAction="#resetToDefault" text="Reset to default" />
+      <Text fx:id="notificationHiddenText" fill="#ee0b0b" layoutX="14.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notifications are currently hidden until the next launch of Malavi." textAlignment="CENTER" wrappingWidth="275.00000622018706">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="21.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notification sound" />
+      <Button disable="true" layoutX="110.0" layoutY="240.0" mnemonicParsing="false" text="Select sound" />
+      <Label layoutX="69.0" layoutY="213.0" text="sounds currently not supported" />
+      <Button layoutX="47.0" layoutY="320.0" mnemonicParsing="false" onAction="#applySettings" text="Apply" />
+      <Button cancelButton="true" layoutX="208.0" layoutY="320.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <Button layoutX="119.0" layoutY="283.0" mnemonicParsing="false" onAction="#resetSettings" text="Reset ALL settings and files (!)" />
+      <TextField fx:id="notificationLengthText" layoutX="85.0" layoutY="45.0" prefHeight="25.0" prefWidth="84.0" />
+      <Text layoutX="177.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Milliseconds" />
+   </children>
+</AnchorPane>

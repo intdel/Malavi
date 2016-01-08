@@ -9,12 +9,10 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import settings.MailConfig;
@@ -62,6 +60,9 @@ public class MainView {
         }
 
         LoggerProvider.setLevel(Level.SEVERE);
+        //Selects first tab when opened
+        tabPane.getSelectionModel().select(0);
+
 
     }
 
@@ -105,6 +106,7 @@ public class MainView {
         newTab.setClosable(true);
 
         tabs.add(newTab);
+        tabPane.getSelectionModel().select(newTab);
 
         Browser browser = new Browser(new BrowserContext(new BrowserContextParams(Settings.getInstance().getBrowserDir())));
         BrowserView browserView = new BrowserView(browser);
@@ -197,30 +199,50 @@ public class MainView {
 
     }
 
-    /**
-     * Resets settings and allows user to start from scratch. It deletes all files in the user directory, but it leaves the structure behind.
-     */
+
     @FXML
-    private void resetSettings() {
-        Alert deleteAlert = new Alert(Alert.AlertType.CONFIRMATION);
-        Optional<ButtonType> deleteResult;
-        deleteAlert.setTitle("Resetting all files and settings");
-        deleteAlert.setHeaderText("Are you sure you want to remove everything\nand start from scratch?");
-        deleteAlert.setContentText("Your working directory is (in case you want to back it up first): " + Settings.getInstance().getWorkDir());
-        deleteResult = deleteAlert.showAndWait();
-
-        if (deleteResult.get() == ButtonType.OK) {
-            stage.hide();
-            tabs.remove(0, tabs.size());
-            Settings.getInstance().resetSettings();
-            Alert restartAlert = new Alert(Alert.AlertType.INFORMATION);
-            restartAlert.setTitle("Settings deleted");
-            restartAlert.setHeaderText("Settings have been deleted.\nYou need to restart Malavi now.");
-            restartAlert.setContentText("NOTE: New settings will be stored in:\n" + Settings.getInstance().getWorkDir());
-            restartAlert.showAndWait();
-            stage.close();
+    private void showSettings() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("SettingsView.fxml"));
+            AnchorPane settingsView = (AnchorPane) loader.load();
+            Stage settingsStage = new Stage(StageStyle.UTILITY);
+            settingsStage.setAlwaysOnTop(true);
+            settingsStage.setScene(new Scene(settingsView));
+            settingsStage.setTitle("Settings");
+            ((SettingsView) loader.getController()).setStage(settingsStage);
+            ((SettingsView) loader.getController()).setTabs(tabs);
+            settingsStage.setResizable(false);
+            settingsStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
 
+    @FXML
+    private void about()
+    {
+
+    }
+
+    @FXML
+    private void addGMail()
+    {
+        addClient("GMail", "https://mail.google.com");
+        settings.addNewConifg("GMail", "https://mail.google.com");
+    }
+
+    @FXML
+    private void addGoogleCalendar()
+    {
+        addClient("Google Calendar", "https://calendar.google.com");
+        settings.addNewConifg("Google Calendar", "https://calendar.google.com");
+    }
+
+    @FXML
+    private void addYahooMail()
+    {
+        addClient("Yahoo Mail", "https://mail.yahoo.com");
+        settings.addNewConifg("Yahoo Mail", "https://mail.yahoo.com");
     }
 
 

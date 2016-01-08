@@ -55,6 +55,7 @@ public class Notification {
     public void muteNotification()
     {
         settings.setNotificationsMuted(muteButton.isSelected());
+        stage.close();
     }
 
 
@@ -77,6 +78,7 @@ public class Notification {
                 PauseTransition delay = new PauseTransition(Duration.millis(length));
                 delay.setOnFinished(event -> notificationStage.close());
                 notification.setText(text);
+                notification.stage = notificationStage;
                 notificationStage.show();
                 delay.play();
             } catch (IOException e) {

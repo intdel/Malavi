@@ -15,9 +15,14 @@
       </Text>
       <ImageView fx:id="logo" fitHeight="64.0" fitWidth="68.0" layoutX="266.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="279.0" layoutY="324.0" mnemonicParsing="false" onAction="#nextButton" text="Next" />
-      <Text layoutX="48.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In leo orci, vehicula at commodo in, ultricies ut nibh. Quisque erat massa, fringilla in finibus eget, cursus id ipsum. Ut et feugiat leo, non elementum neque. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus." wrappingWidth="502.736328125" />
+      <Text layoutX="48.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Malavi is a hybrid desktop/web email application. It gives you the best of both worlds. This means that you can use all great features that the web mail client provides, but you also get advantages that a local application can provide. These advantages include: Independence of the browser process, notifications, increased productivity due to separate app." wrappingWidth="502.736328125" />
       <CheckBox fx:id="gMailCheckBox" layoutX="264.0" layoutY="248.0" mnemonicParsing="false" text="Google Mail (GMail)" />
       <CheckBox fx:id="gCalendarCheckBox" layoutX="264.0" layoutY="265.0" mnemonicParsing="false" text="Google Calendar" />
       <CheckBox fx:id="yahooMailCheckBox" layoutX="264.0" layoutY="282.0" mnemonicParsing="false" text="Yahoo Mail" />
+      <Text layoutX="48.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please select which email clients you want to have by default (not mandatory): " wrappingWidth="502.736328125">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

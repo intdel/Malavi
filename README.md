@@ -33,4 +33,4 @@ license).
  - So far only tested on Windows 10 with Java 1.8_66
  - If you want to run it on Linux/OS X you WILL need Java 1.8_66. I was able to run it on Linux mint, but I noticed that there were some (small) UI issues.
  - Since this is the first major release, it might still have a few bugs.
- -**Software is provided "as is." I am not liable for any damage, data loss, whatsoever that could occur through usage of this application.**
+ - **Software is provided "as is." I am not liable for any damage, data loss, whatsoever that could occur through usage of this application.**

@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="366.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingsView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="366.0" prefWidth="473.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SettingsView">
    <children>
       <Text layoutX="21.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notification length">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Text>
-      <ToggleButton fx:id="notificationHiddenButton" layoutX="75.0" layoutY="142.0" mnemonicParsing="false" onAction="#muteNotifications" text="Mute notifications for now" />
-      <Button layoutX="11.0" layoutY="283.0" mnemonicParsing="false" onAction="#resetToDefault" text="Reset to default" />
-      <Text fx:id="notificationHiddenText" fill="#ee0b0b" layoutX="14.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notifications are currently hidden until the next launch of Malavi." textAlignment="CENTER" wrappingWidth="275.00000622018706">
+      <ToggleButton fx:id="notificationHiddenButton" layoutX="252.0" layoutY="67.0" mnemonicParsing="false" onAction="#muteNotifications" text="Mute notifications for now" />
+      <Button layoutX="21.0" layoutY="210.0" mnemonicParsing="false" onAction="#resetToDefault" text="Reset setting values to default" />
+      <Text fx:id="notificationHiddenText" fill="#ee0b0b" layoutX="178.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notifications are currently hidden until the next launch of Malavi." textAlignment="CENTER" wrappingWidth="275.00000622018706">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Text>
-      <Text layoutX="21.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notification sound" />
-      <Button disable="true" layoutX="110.0" layoutY="240.0" mnemonicParsing="false" text="Select sound" />
-      <Label layoutX="69.0" layoutY="213.0" text="sounds currently not supported" />
+      <Text layoutX="22.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Notification sound">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Button disable="true" layoutX="19.0" layoutY="145.0" mnemonicParsing="false" text="Select sound" />
+      <Label layoutX="111.0" layoutY="113.0" text="sounds currently not supported" />
       <Button layoutX="47.0" layoutY="320.0" mnemonicParsing="false" onAction="#applySettings" text="Apply" />
-      <Button cancelButton="true" layoutX="208.0" layoutY="320.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
-      <Button layoutX="119.0" layoutY="283.0" mnemonicParsing="false" onAction="#resetSettings" text="Reset ALL settings and files (!)" />
-      <TextField fx:id="notificationLengthText" layoutX="85.0" layoutY="45.0" prefHeight="25.0" prefWidth="84.0" />
-      <Text layoutX="177.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Milliseconds" />
+      <Button cancelButton="true" layoutX="383.0" layoutY="320.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <Button layoutX="21.0" layoutY="246.0" mnemonicParsing="false" onAction="#resetSettings" text="Reset ALL settings and DELETE files (!)" />
+      <TextField fx:id="notificationLengthText" layoutX="21.0" layoutY="46.0" prefHeight="25.0" prefWidth="84.0">
+         <tooltip>
+            <Tooltip text="Hint: Use 0 to disable notifications" />
+         </tooltip></TextField>
+      <Text layoutX="113.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Milliseconds" />
+      <Text layoutX="21.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selected sound:" />
+      <Text layoutX="22.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reset settings">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="settingsImage" fitHeight="108.0" fitWidth="147.0" layoutX="288.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

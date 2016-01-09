@@ -30,6 +30,8 @@ public class Notification {
     private Text text;
     @FXML
     private ToggleButton muteButton;
+    @FXML
+    private  AnchorPane anchorPane;
 
     private Stage stage;
     private static Settings settings = Settings.getInstance();
@@ -44,6 +46,10 @@ public class Notification {
     private void initialize()
     {
         logo.setImage(new Image(getClass().getResource("/res/logo.png").toString()));
+        Image muteImage = new Image(getClass().getResource("/res/mute.png").toString(),muteButton.getPrefWidth(), muteButton.getPrefHeight(), true, true);
+        ImageView muteLogo = new ImageView(muteImage);
+        muteButton.setGraphic(muteLogo);
+        muteButton.setText("");
     }
 
     public void setText(String text)
@@ -72,8 +78,8 @@ public class Notification {
                 notificationStage.setScene(new Scene(anchorPane));
                 notificationStage.alwaysOnTopProperty();
                 notificationStage.setAlwaysOnTop(true);
-                notificationStage.setX(screenDim.getWidth() - 272); //FIXME don't hard code width of notification
-                notificationStage.setY(0);
+                notificationStage.setX(screenDim.getWidth() - (anchorPane.getPrefWidth() + 10));
+                notificationStage.setY(10);
 
                 PauseTransition delay = new PauseTransition(Duration.millis(length));
                 delay.setOnFinished(event -> notificationStage.close());

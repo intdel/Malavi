@@ -32,7 +32,7 @@ public class TitleChanged implements TitleListener {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                String message = "You have one or more new messages in " + clientName + "!";
+                String message = clientName + " seems to have a new email for you!";
                 String title = titleEvent.getTitle();
                 String debugtitle = title.replaceAll("\\D+","");
                 int newMessageCount = -1;

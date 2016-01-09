@@ -21,6 +21,11 @@
               <MenuItem mnemonicParsing="false" onAction="#openAddNewMailClientDialog" text="Custom Tab" />
               </items>
             </Menu>
+          <Menu mnemonicParsing="false" text="Edit...">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showSettings" text="Preferences" />
+               </items>
+          </Menu>
             <Menu mnemonicParsing="false" text="Tabs..">
               <items>
                   <Menu mnemonicParsing="false" text="All Tabs">
@@ -31,16 +36,11 @@
                   <Menu mnemonicParsing="false" text="Selected Tab">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#refreshTab" text="Refresh" />
-                        <MenuItem mnemonicParsing="false" onAction="#removeTab" text="Remove" />
+                        <MenuItem mnemonicParsing="false" onAction="#removeTab" text="Close" />
                     </items>
                   </Menu>
               </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Settings">
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#showSettings" text="Settings" />
-               </items>
-          </Menu>
           <Menu disable="true" mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#about" text="About" />

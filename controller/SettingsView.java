@@ -6,6 +6,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -24,6 +26,8 @@ public class SettingsView {
     private TextField notificationLengthText;
     @FXML
     private ToggleButton notificationHiddenButton;
+    @FXML
+    private ImageView settingsImage;
 
     private Settings settings = Settings.getInstance();
     private Stage stage;
@@ -63,6 +67,8 @@ public class SettingsView {
                 }
             }
         });
+
+        settingsImage.setImage(new Image(getClass().getResource("/res/settings.png").toString()));
     }
 
 

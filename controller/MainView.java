@@ -9,10 +9,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import settings.MailConfig;
@@ -75,7 +77,7 @@ public class MainView {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("NewMailClientDialog.fxml"));
             AnchorPane newMailClient = (AnchorPane) loader.load();
             Stage newMailClientStage = new Stage(StageStyle.UTILITY);
-            newMailClientStage.setTitle("Add new mail client");
+            newMailClientStage.setTitle("Malavi - Add new mail tab");
             newMailClientStage.setResizable(false);
             newMailClientStage.setAlwaysOnTop(true);
             newMailClientStage.setScene(new Scene(newMailClient));
@@ -208,7 +210,7 @@ public class MainView {
             Stage settingsStage = new Stage(StageStyle.UTILITY);
             settingsStage.setAlwaysOnTop(true);
             settingsStage.setScene(new Scene(settingsView));
-            settingsStage.setTitle("Settings");
+            settingsStage.setTitle("Malavi Preferences");
             ((SettingsView) loader.getController()).setStage(settingsStage);
             ((SettingsView) loader.getController()).setTabs(tabs);
             settingsStage.setResizable(false);
@@ -219,30 +221,29 @@ public class MainView {
     }
 
     @FXML
-    private void about()
-    {
+    private void about() {
 
     }
 
     @FXML
-    private void addGMail()
-    {
+    private void addGMail() {
         addClient("GMail", "https://mail.google.com");
         settings.addNewConifg("GMail", "https://mail.google.com");
+        renumberTabIDs();
     }
 
     @FXML
-    private void addGoogleCalendar()
-    {
+    private void addGoogleCalendar() {
         addClient("Google Calendar", "https://calendar.google.com");
         settings.addNewConifg("Google Calendar", "https://calendar.google.com");
+        renumberTabIDs();
     }
 
     @FXML
-    private void addYahooMail()
-    {
+    private void addYahooMail() {
         addClient("Yahoo Mail", "https://mail.yahoo.com");
         settings.addNewConifg("Yahoo Mail", "https://mail.yahoo.com");
+        renumberTabIDs();
     }
 
 

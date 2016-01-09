@@ -5,14 +5,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="158.0" prefWidth="230.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewMailClientDialog">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="207.0" prefWidth="288.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NewMailClientDialog">
    <children>
-      <Label layoutX="26.0" layoutY="24.0" text="Name" />
-      <Label layoutX="26.0" layoutY="68.0" text="URL" />
-      <Button layoutX="42.0" layoutY="118.0" mnemonicParsing="false" onAction="#addNewClient" text="Add" />
-      <TextField fx:id="name" layoutX="67.0" layoutY="20.0" promptText="Example" />
-      <TextField fx:id="URL" layoutX="67.0" layoutY="64.0" promptText="https://mail.example.com" />
-      <Text layoutX="32.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please make sure you use https" />
-      <Button layoutX="149.0" layoutY="118.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+      <Label layoutX="26.0" layoutY="24.0" text="Name:" />
+      <Label layoutX="35.0" layoutY="68.0" text="URL:" />
+      <Button layoutX="65.0" layoutY="161.0" mnemonicParsing="false" onAction="#addNewClient" text="Add" />
+      <TextField fx:id="name" layoutX="67.0" layoutY="20.0" prefHeight="25.0" prefWidth="194.0" promptText="Example" />
+      <TextField fx:id="URL" layoutX="67.0" layoutY="64.0" prefHeight="25.0" prefWidth="194.0" promptText="https://mail.example.com" />
+      <Text layoutX="47.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please make sure you use https for increased security." wrappingWidth="193.98046875" />
+      <Button layoutX="172.0" layoutY="161.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
    </children>
 </AnchorPane>

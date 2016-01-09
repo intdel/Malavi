@@ -1,9 +1,18 @@
 # Malavi
 Malavi is a hybrid desktop/web email application. It gives you the best of both worlds. This means that you can use all great features that the web mail client provides, but you also get advantages that a local application can provide. These advantages include: Independence of the browser process, notifications, increased productivity due to separate app.
 
-#Screenshot
-![Screenshot of Alpha Malavi](screenshot.jpg?raw=true "Screenshot of 
+#Features
+- All features that web mail provides (e.g. Google Mail, Google Calendar)
+- Desktop notifications*
+- Independendent of the browser process
+- Uses separate folder for Cache, Cookies etc. from Browser
+- OS independent (requires Java 1.8_66)
+
+#Screenshots
+![Screenshot of Malavi](screenshot.jpg?raw=true "Screenshot of 
 Alpha Malavi")
+
+![Screenshot of Malavi Notification](notification_screenshot.jpg?raw=true "Screenshot of Notification")
 
 #Download
 ![Download Pre-Release Version (binary) (241 MB)](https://github.com/intdel/Malavi/releases/tag/V1.0)

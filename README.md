@@ -14,12 +14,15 @@ Malavi is a hybrid desktop/web email application. It gives you the best of both 
 #Screenshots
 ![Screenshot of Malavi](screenshot.jpg?raw=true "Screenshot of 
 Malavi")
+
 Malavi V1.1
 
 ![Screenshot of Malavi Notification](notification_screenshot.jpg?raw=true "Screenshot of Notification")
-Example Notification
+
+Example Notification (shown in upper right corner of screen)
+
 #Download
-![Download Pre-Release Version (binary) (241 MB)](https://github.com/intdel/Malavi/releases/tag/V1.0)
+![Download Pre-Release Version (JAR file) (241 MB)](https://github.com/intdel/Malavi/releases/tag/V1.0)
 
 
 #Notes

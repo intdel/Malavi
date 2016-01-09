@@ -7,7 +7,7 @@ Malavi is a hybrid desktop/web email application. It gives you the best of both 
 - Independent of the browser process
 - Uses separate folder for Cache, Cookies etc. from Browser
 - OS independent (requires Java 1.8_66)
-- Free
+- Free and Open Source
 
 *Notifications only work if the Browser title reflects new inbox changes (e.g. number of emails change)
 
